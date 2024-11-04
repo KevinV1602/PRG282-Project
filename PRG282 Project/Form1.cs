@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace PRG282_Project
 {
     public partial class MainForm : Form
-    {
+    {/// <summary>
+    /// /
+    /// </summary>
         public MainForm()
         {
             InitializeComponent();
