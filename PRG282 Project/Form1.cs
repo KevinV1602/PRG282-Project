@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace PRG282_Project
 {
-    public partial class Form1 : Form
-    {
-        public Form1()
+    public partial class MainForm : Form
+    {/// <summary>
+    /// /
+    /// </summary>
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
