@@ -1,0 +1,101 @@
+Student ID, Name, Age, Course
+S001, Jane Smith, 25, English Literature
+S002, David Smith, 21, Mathematics
+S003, Michael Brown, 21, English Literature
+S004, Katie Garcia, 18, Geography
+S005, Chris Smith, 21, Physics
+S006, John Miller, 18, History
+S007, David Miller, 21, Biology
+S008, Emily Smith, 18, Mathematics
+S009, John Miller, 21, Chemistry
+S010, John Johnson, 21, Mathematics
+S011, John Johnson, 24, Physics
+S012, Emily Miller, 22, History
+S013, John Garcia, 22, Physics
+S014, Katie Brown, 24, Physics
+S015, Sarah Brown, 19, Computer Science
+S016, Laura Williams, 24, Mathematics
+S017, Sarah Brown, 20, Mathematics
+S018, Jane Garcia, 20, Physics
+S019, Laura Jones, 19, English Literature
+S020, Emily Brown, 24, History
+S021, Emily Miller, 19, Geography
+S022, Alex Davis, 19, Biology
+S023, Sarah Johnson, 18, Physics
+S024, Laura Johnson, 25, Geography
+S025, Chris Jones, 23, Geography
+S026, Michael Miller, 24, Physics
+S027, Sarah Davis, 19, Physics
+S028, John Brown, 18, Mathematics
+S029, Chris Davis, 22, Biology
+S030, Alex Martinez, 19, Computer Science
+S031, John Smith, 21, Chemistry
+S032, Sarah Williams, 22, Geography
+S033, Michael Davis, 20, History
+S034, Laura Davis, 20, History
+S035, Jane Jones, 21, Computer Science
+S036, Emily Smith, 22, Biology
+S037, Emily Smith, 18, Physics
+S038, Sarah Davis, 18, Chemistry
+S039, Sarah Williams, 24, Geography
+S040, Chris Garcia, 25, History
+S041, David Miller, 21, History
+S042, John Brown, 25, Chemistry
+S043, Emily Hernandez, 20, English Literature
+S044, Alex Brown, 25, English Literature
+S045, Laura Miller, 19, Physics
+S046, John Jones, 18, Mathematics
+S047, Alex Hernandez, 19, Mathematics
+S048, David Martinez, 22, Mathematics
+S049, Laura Williams, 24, Computer Science
+S050, Alex Brown, 23, Biology
+S051, Emily Williams, 18, Geography
+S052, Jane Miller, 22, English Literature
+S053, Katie Williams, 22, History
+S054, David Miller, 21, Geography
+S055, David Davis, 19, Geography
+S056, Chris Johnson, 23, Computer Science
+S057, Michael Garcia, 22, Computer Science
+S058, Emily Jones, 22, Computer Science
+S059, Sarah Brown, 19, English Literature
+S060, Katie Martinez, 25, Mathematics
+S061, Chris Davis, 20, Physics
+S062, Michael Garcia, 19, Chemistry
+S063, Laura Jones, 25, English Literature
+S064, Chris Jones, 21, Mathematics
+S065, David Smith, 25, English Literature
+S066, Jane Williams, 25, History
+S067, John Hernandez, 20, History
+S068, Katie Martinez, 25, Geography
+S069, Emily Davis, 24, Computer Science
+S070, Emily Garcia, 25, Chemistry
+S071, Sarah Williams, 20, History
+S072, Sarah Brown, 21, Chemistry
+S073, Katie Williams, 25, Chemistry
+S074, John Hernandez, 22, English Literature
+S075, Michael Brown, 23, English Literature
+S076, Sarah Smith, 20, Computer Science
+S077, David Martinez, 21, Geography
+S078, Laura Davis, 19, English Literature
+S079, Alex Miller, 22, English Literature
+S080, Chris Brown, 22, Chemistry
+S081, Chris Martinez, 23, Computer Science
+S082, Chris Johnson, 22, Chemistry
+S083, Sarah Brown, 19, Geography
+S084, Laura Davis, 20, History
+S085, Michael Brown, 25, Biology
+S086, Sarah Miller, 25, Computer Science
+S087, Laura Martinez, 22, Mathematics
+S088, Chris Brown, 20, Physics
+S089, Emily Johnson, 23, Chemistry
+S090, Katie Miller, 22, History
+S091, Katie Davis, 25, Physics
+S092, Laura Miller, 18, Biology
+S093, Jane Johnson, 24, Chemistry
+S094, Michael Garcia, 21, Physics
+S095, Laura Miller, 23, Computer Science
+S096, Emily Miller, 25, Computer Science
+S097, Sarah Hernandez, 24, Geography
+S098, Alex Davis, 25, Chemistry
+S099, Jane Miller, 22, English Literature
+S100, Laura Martinez, 23, English Literature
