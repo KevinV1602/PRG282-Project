@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project.DataHandeling;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +55,13 @@ namespace PRG282_Project
             myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
             DBTable.DataSource = myDataTable;
+        }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            AddNewStudent addNewStudent = new AddNewStudent();
+            addNewStudent.AddStudent(txName.Text,txAge.Text,txCourse.Text);
+            MessageBox.Show($"Student added {addNewStudent.getNewID()}, {txName.Text}, {txAge.Text}, {txCourse}");
         }
     }
 }
