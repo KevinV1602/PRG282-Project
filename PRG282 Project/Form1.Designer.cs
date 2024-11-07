@@ -1,10 +1,22 @@
-﻿namespace PRG282_Project
+﻿using PRG282_Project.DataHandeling;
+using System.Windows.Forms;
+using System;
+
+namespace PRG282_Project
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        /// 
+      /*  InitializeComponent();
+        viewAllStudents = new ViewAllStudents(dataGridViewStudents); // Pass DataGridView to the handler
+        private void btnViewStudent_Click(object sender, EventArgs e)
+        {
+            viewAllStudents.DisplayStudents();
+        }*/
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -19,6 +31,7 @@
             }
             base.Dispose(disposing);
         }
+
 
         #region Windows Form Designer generated code
 
@@ -202,6 +215,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+
+
     }
 }
 
