@@ -65,6 +65,7 @@ namespace PRG282_Project
             this.btnAddStudent.TabIndex = 0;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // btnDeleteStudent
             // 
