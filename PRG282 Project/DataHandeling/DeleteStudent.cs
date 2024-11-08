@@ -33,18 +33,18 @@ namespace PRG282_Project.DataHandeling
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    if (!File.Exists(filePath))
+                    if (!File.Exists(path))
                     {
                         MessageBox.Show("The students.txt file was not found.");
                         return;
                     }
 
-                    string[] studentRecords = File.ReadAllLines(filePath);
+                    string[] studentRecords = File.ReadAllLines(path);
                     var updatedRecords = studentRecords
                         .Where(record => !record.StartsWith(studentId + ","))
                         .ToArray();
 
-                    File.WriteAllLines(filePath, updatedRecords);
+                    File.WriteAllLines(path, updatedRecords);
 
                     // Refresh DataGridView
                     viewAllStudents.DisplayStudents();

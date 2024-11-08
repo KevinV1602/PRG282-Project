@@ -9,7 +9,8 @@ namespace PRG282_Project.DataHandeling
 {
     internal class AddNewStudent
     {
-        string path = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+       // string path = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+        string path = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
 
         public void AddStudent(string name, string age, string course)
         {
