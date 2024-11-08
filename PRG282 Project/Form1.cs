@@ -25,9 +25,7 @@ namespace PRG282_Project
         public MainForm()
         {
             InitializeComponent();
-            dataGridViewStudents = DBTable;
-            // Initialize ViewAllStudents with the DataGridView instance from MainForm
-            viewAllStudents = new ViewAllStudents(dataGridViewStudents);
+           
         }
 
         DataTable myDataTable = new DataTable();//
@@ -43,6 +41,9 @@ namespace PRG282_Project
               myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
             DBTable.DataSource = myDataTable;
+            dataGridViewStudents = DBTable;
+            // Initialize ViewAllStudents with the DataGridView instance from MainForm
+            viewAllStudents = new ViewAllStudents(myDataTable);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
