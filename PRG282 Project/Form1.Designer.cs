@@ -1,4 +1,4 @@
-﻿using PRG282_Project.DataHandeling;
+using PRG282_Project.DataHandeling;
 using System.Windows.Forms;
 using System;
 
@@ -201,10 +201,6 @@ namespace PRG282_Project
             ((System.ComponentModel.ISupportInitialize)(this.DBTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-        }
-
-       
 
 
 
