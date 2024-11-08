@@ -1,4 +1,4 @@
-﻿using PRG282_Project.DataHandeling;
+using PRG282_Project.DataHandeling;
 using System.Windows.Forms;
 using System;
 
@@ -202,12 +202,7 @@ namespace PRG282_Project
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
 
-        private void btnAddStudent_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 
