@@ -1,4 +1,3 @@
-Student ID, Name, Age, Course
 S002, David Smith, 21, Mathematics
 S003, Michael Brown, 21, English Literature
 S004, Katie Garcia, 18, Geography
@@ -99,3 +98,4 @@ S098, Alex Davis, 25, Chemistry
 S099, Jane Miller, 22, English Literature
 S100, Laura Martinez, 23, English Literature
 S101, Alice Johnson, 20, Science
+ 

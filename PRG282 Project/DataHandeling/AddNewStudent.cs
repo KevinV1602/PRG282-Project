@@ -4,27 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
+using PRG282_Project.StudentLayer;
+
 
 namespace PRG282_Project.DataHandeling
 {
     internal class AddNewStudent
     {
-       // string path = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
-        string path = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
-
+        private ViewAllStudents viewAllStudents;
+        public AddNewStudent(ViewAllStudents viewAllStudentsInstance) 
+        {
+            viewAllStudents = viewAllStudentsInstance;
+        }
+        
+        string path = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+        ViewAllStudents ViewAllStudents;  
         public void AddStudent(string name, string age, string course)
         {
+            
             try
             {
-                List<string> lines = new List<string>();
-                lines = File.ReadAllLines(path).ToList();
-                lines.Add($"{getNewID()}, {name}, {age}, {course}");
-                File.WriteAllLines(path, lines);
+                
+                    if (File.Exists(path))
+                    {
+
+                        List<string> lines = new List<string>();
+                        lines = File.ReadAllLines(path).ToList();
+                        lines.Add($"{getNewID()}, {name}, {age}, {course}");
+                        File.WriteAllLines(path, lines);
+
+                        MessageBox.Show("Student Added");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("students.txt file not found.");
+                    }
+                
+               
+
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message + "file not found");
             }
+            viewAllStudents.DisplayStudents();
         }
 
         public string getNewID()
@@ -48,19 +74,6 @@ namespace PRG282_Project.DataHandeling
             return newID;
         }
 
-        public List<string> Read()
-        {
-            List<string> lines = new List<string>();
-            try
-            {                
-                lines = File.ReadAllLines(path).ToList();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message + "file not found");
-            }
-            
-            return lines;
-        }
+        
     }
 }
