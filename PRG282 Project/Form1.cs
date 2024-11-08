@@ -19,30 +19,30 @@ namespace PRG282_Project
      /// /
      /// </summary>
         private ViewAllStudents viewAllStudents;
-        private DataGridView dataGridViewStudents;
+        public static DataGridView dataGridViewStudents;
 
         public MainForm()
         {
             InitializeComponent();
-            dataGridViewStudents = DBTable;
-            // Initialize ViewAllStudents with the DataGridView instance from MainForm
-            viewAllStudents = new ViewAllStudents(dataGridViewStudents);
+        
         }
 
         DataTable myDataTable = new DataTable();
-        private void MainForm_Load(object sender, EventArgs e)
-        {
+          private void MainForm_Load(object sender, EventArgs e)
+          {
+            
 
+              myDataTable.Columns.Add("ID", typeof(string));
+              myDataTable.Columns.Add("Name", typeof(string));
+              myDataTable.Columns.Add("Age", typeof(int));
+              myDataTable.Columns.Add("Course", typeof(string));
 
-            myDataTable.Columns.Add("ID", typeof(string));
-            myDataTable.Columns.Add("Name", typeof(string));
-            myDataTable.Columns.Add("Age", typeof(int));
-            myDataTable.Columns.Add("Course", typeof(string));
+              myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
-            myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
-
-            DBTable.DataSource = myDataTable;
-        }
+              DBTable.DataSource = myDataTable; 
+          }
+       
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -97,6 +97,21 @@ namespace PRG282_Project
                 MessageBox.Show("Student Add Canceled");
             }
         }
+
+        private void btnUpdateStudent_Click(object sender, EventArgs e)
+        {
+            // collect updated student data from the user
+            Student updatedStudent = UpdateStudentInfo.GetUpdatedStudentFromUser();
+
+            //Update the DataGridView with the updated student data
+
+            UpdateStudentInfo.UpdateStudentInGrid(dataGridViewStudents, updatedStudent);
+
+            // Refresh the DataGridView
+
+            dataGridViewStudents.Refresh();
+        }
+
 
     }
 }
