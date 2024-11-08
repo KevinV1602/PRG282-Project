@@ -17,7 +17,7 @@ namespace PRG282_Project.StudentLayer
 
 
         // Constructor accepting DataGridView
-        public ViewAllStudents(DataTable dataGridView)
+        public ViewAllStudents( DataTable dataGridView)
         {
             dataGridViewStudents = dataGridView;
         }
