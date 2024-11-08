@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PRG282_Project.DataHandeling;
 using PRG282_Project.StudentLayer;
+using System.Xml.Linq;
 
 namespace PRG282_Project
 {
@@ -71,7 +72,7 @@ namespace PRG282_Project
 
         private void btnViewStudent_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button Clicked"); // Debug: Check if event is triggered
+             
             myDataTable.Clear();
             myDataTable = viewAllStudents.DisplayStudents();
             DBTable.DataSource = myDataTable;
@@ -86,19 +87,27 @@ namespace PRG282_Project
         }
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            AddNewStudent addNewStudent = new AddNewStudent();
-            DialogResult Result = MessageBox.Show($"Are you sure you want to add this Student " +
+            AddNewStudent addNewStudent = new AddNewStudent(viewAllStudents);
+            if (txName == null || txAge.Text == null || txCourse.Text == null)
+            {
+                DialogResult Result = MessageBox.Show($"Are you sure you want to add this Student " +
                 $"\rStudentID: {addNewStudent.getNewID()}\r Name: {txName.Text}\r " +
                 $"Age: {txAge.Text}\r " +
                 $"Course: {txCourse.Text}", "Add Student", MessageBoxButtons.OKCancel);
-            if (Result == DialogResult.OK)
-            {
-                addNewStudent.AddStudent(txName.Text, txAge.Text, txCourse.Text);
-                MessageBox.Show("Student Added");
+
+                if (Result == DialogResult.OK)
+                {
+                    addNewStudent.AddStudent(txName.Text, txAge.Text, txCourse.Text);
+
+                }
+                else if (Result == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Student Add Canceled");
+                }
             }
-            else if (Result == DialogResult.Cancel)
+            else
             {
-                MessageBox.Show("Student Add Canceled");
+                MessageBox.Show("Please ender details");
             }
         }
 

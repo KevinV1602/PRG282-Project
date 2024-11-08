@@ -150,12 +150,12 @@ namespace PRG282_Project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(623, 155);
+            this.label1.Location = new System.Drawing.Point(623, 158);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Name";
+            this.label1.Text = "Full Name";
             // 
             // label2
             // 
@@ -201,6 +201,7 @@ namespace PRG282_Project
             ((System.ComponentModel.ISupportInitialize)(this.DBTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
 
