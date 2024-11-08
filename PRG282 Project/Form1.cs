@@ -46,10 +46,7 @@ namespace PRG282_Project
             viewAllStudents = new ViewAllStudents(myDataTable);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void button5_Click(object sender, EventArgs e)
         {
