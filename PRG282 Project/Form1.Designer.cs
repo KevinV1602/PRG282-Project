@@ -75,6 +75,7 @@ namespace PRG282_Project
             this.btnDeleteStudent.TabIndex = 1;
             this.btnDeleteStudent.Text = "Delete Student";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
             // btnUpdateStudent
             // 
@@ -95,6 +96,7 @@ namespace PRG282_Project
             this.btnViewStudent.TabIndex = 3;
             this.btnViewStudent.Text = "View All Students";
             this.btnViewStudent.UseVisualStyleBackColor = true;
+            this.btnViewStudent.Click += new System.EventHandler(this.btnViewStudent_Click);
             // 
             // btnSummary
             // 
@@ -123,7 +125,7 @@ namespace PRG282_Project
             // txName
             // 
             this.txName.Location = new System.Drawing.Point(600, 178);
-            this.txName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txName.Margin = new System.Windows.Forms.Padding(4);
             this.txName.Name = "txName";
             this.txName.Size = new System.Drawing.Size(132, 22);
             this.txName.TabIndex = 6;
@@ -131,7 +133,7 @@ namespace PRG282_Project
             // txAge
             // 
             this.txAge.Location = new System.Drawing.Point(600, 230);
-            this.txAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txAge.Margin = new System.Windows.Forms.Padding(4);
             this.txAge.Name = "txAge";
             this.txAge.Size = new System.Drawing.Size(132, 22);
             this.txAge.TabIndex = 7;
@@ -139,7 +141,7 @@ namespace PRG282_Project
             // txCourse
             // 
             this.txCourse.Location = new System.Drawing.Point(600, 288);
-            this.txCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txCourse.Margin = new System.Windows.Forms.Padding(4);
             this.txCourse.Name = "txCourse";
             this.txCourse.Size = new System.Drawing.Size(132, 22);
             this.txCourse.TabIndex = 8;
