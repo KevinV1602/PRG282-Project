@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,7 +7,7 @@ namespace PRG282_Project.StudentLayer
 {
     internal class ViewAllStudents
     {
-        private DataGridView dataGridViewStudents;
+        private DataTable dataGridViewStudents;
 
         private ViewAllStudents viewAllStudents;
 
@@ -15,12 +16,12 @@ namespace PRG282_Project.StudentLayer
 
 
         // Constructor accepting DataGridView
-        public ViewAllStudents(DataGridView dataGridView)
+        public ViewAllStudents(DataTable dataGridView)
         {
             dataGridViewStudents = dataGridView;
         }
 
-        public void DisplayStudents()
+        public DataTable DisplayStudents()
         {
             string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
 
@@ -28,30 +29,34 @@ namespace PRG282_Project.StudentLayer
             {
                 // Clear existing rows and columns only if necessary
                 dataGridViewStudents.Rows.Clear();
+               dataGridViewStudents.Columns.Clear();
                 if (dataGridViewStudents.Columns.Count == 0)
-                {
-                    dataGridViewStudents.Columns.Add("StudentID", "Student ID");
-                    dataGridViewStudents.Columns.Add("Name", "Name");
-                    dataGridViewStudents.Columns.Add("Age", "Age");
-                    dataGridViewStudents.Columns.Add("Course", "Course");
+               {
+                    dataGridViewStudents.Columns.Add("ID", typeof(string));
+                    dataGridViewStudents.Columns.Add("Name", typeof(string));
+                    dataGridViewStudents.Columns.Add("Age", typeof(string));
+                    dataGridViewStudents.Columns.Add("Course", typeof(string));
                 }
 
                 if (File.Exists(filePath))
                 {
                     string[] studentRecords = File.ReadAllLines(filePath);
+                    
                     MessageBox.Show($"Loaded {studentRecords.Length} records."); // Debugging: Check file content
 
                     foreach (string record in studentRecords)
                     {
+                        
                         string[] studentData = record.Split(',');
+                       
 
                         if (studentData.Length == 4)
                         {
                             dataGridViewStudents.Rows.Add(
-                                studentData[0].Trim(),
-                                studentData[1].Trim(),
-                                studentData[2].Trim(),
-                                studentData[3].Trim()
+                                studentData[0],
+                                studentData[1],
+                                studentData[2], 
+                                studentData[3]                               
                             );
                         }
                         else
@@ -70,6 +75,7 @@ namespace PRG282_Project.StudentLayer
             {
                 MessageBox.Show($"An error occurred while loading students: {ex.Message}");
             }
+            return dataGridViewStudents;
         }
     }
 }

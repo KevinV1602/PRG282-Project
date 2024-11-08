@@ -24,9 +24,7 @@ namespace PRG282_Project
         public MainForm()
         {
             InitializeComponent();
-            dataGridViewStudents = DBTable;
-            // Initialize ViewAllStudents with the DataGridView instance from MainForm
-            viewAllStudents = new ViewAllStudents(dataGridViewStudents);
+            
         }
 
         DataTable myDataTable = new DataTable();
@@ -36,12 +34,16 @@ namespace PRG282_Project
 
             myDataTable.Columns.Add("ID", typeof(string));
             myDataTable.Columns.Add("Name", typeof(string));
-            myDataTable.Columns.Add("Age", typeof(int));
+            myDataTable.Columns.Add("Age", typeof(string));
             myDataTable.Columns.Add("Course", typeof(string));
 
             myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
             DBTable.DataSource = myDataTable;
+
+            dataGridViewStudents = DBTable;
+            // Initialize ViewAllStudents with the DataGridView instance from MainForm
+            viewAllStudents = new ViewAllStudents(myDataTable);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,7 +72,9 @@ namespace PRG282_Project
         private void btnViewStudent_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Button Clicked"); // Debug: Check if event is triggered
-            viewAllStudents.DisplayStudents();
+            myDataTable.Clear();
+            myDataTable = viewAllStudents.DisplayStudents();
+            DBTable.DataSource = myDataTable;
         }
 
 
