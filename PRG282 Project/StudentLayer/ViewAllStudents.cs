@@ -22,7 +22,7 @@ namespace PRG282_Project.StudentLayer
 
         public void DisplayStudents()
         {
-            string filePath = "students.txt"; // File path
+            string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
 
             try
             {

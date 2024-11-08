@@ -80,7 +80,23 @@ namespace PRG282_Project
             var deleteStudent = new DeleteStudent(dataGridViewStudents, viewAllStudents);
             deleteStudent.DeleteSelectedStudent();
         }
-
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            AddNewStudent addNewStudent = new AddNewStudent();
+            DialogResult Result = MessageBox.Show($"Are you sure you want to add this Student " +
+                $"\rStudentID: {addNewStudent.getNewID()}\r Name: {txName.Text}\r " +
+                $"Age: {txAge.Text}\r " +
+                $"Course: {txCourse.Text}", "Add Student", MessageBoxButtons.OKCancel);
+            if (Result == DialogResult.OK)
+            {
+                addNewStudent.AddStudent(txName.Text, txAge.Text, txCourse.Text);
+                MessageBox.Show("Student Added");
+            }
+            else if (Result == DialogResult.Cancel)
+            {
+                MessageBox.Show("Student Add Canceled");
+            }
+        }
 
     }
 }
