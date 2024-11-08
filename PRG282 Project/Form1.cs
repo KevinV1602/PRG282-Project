@@ -28,15 +28,15 @@ namespace PRG282_Project
             
         }
 
-        DataTable myDataTable = new DataTable();
+        DataTable myDataTable = new DataTable();//
         private void MainForm_Load(object sender, EventArgs e)
         {
 
 
-            myDataTable.Columns.Add("ID", typeof(string));
+           myDataTable.Columns.Add("ID", typeof(string));
             myDataTable.Columns.Add("Name", typeof(string));
             myDataTable.Columns.Add("Age", typeof(string));
-            myDataTable.Columns.Add("Course", typeof(string));
+           myDataTable.Columns.Add("Course", typeof(string));
 
             myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
