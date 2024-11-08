@@ -201,6 +201,7 @@ namespace PRG282_Project
             ((System.ComponentModel.ISupportInitialize)(this.DBTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+        }
 
 
 
