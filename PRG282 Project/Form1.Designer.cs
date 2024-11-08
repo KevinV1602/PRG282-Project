@@ -52,6 +52,7 @@
             this.btnAddStudent.TabIndex = 0;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // btnDeleteStudent
             // 
@@ -110,7 +111,7 @@
             // txName
             // 
             this.txName.Location = new System.Drawing.Point(600, 178);
-            this.txName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txName.Margin = new System.Windows.Forms.Padding(4);
             this.txName.Name = "txName";
             this.txName.Size = new System.Drawing.Size(132, 22);
             this.txName.TabIndex = 6;
@@ -118,7 +119,7 @@
             // txAge
             // 
             this.txAge.Location = new System.Drawing.Point(600, 230);
-            this.txAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txAge.Margin = new System.Windows.Forms.Padding(4);
             this.txAge.Name = "txAge";
             this.txAge.Size = new System.Drawing.Size(132, 22);
             this.txAge.TabIndex = 7;
@@ -126,7 +127,7 @@
             // txCourse
             // 
             this.txCourse.Location = new System.Drawing.Point(600, 288);
-            this.txCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txCourse.Margin = new System.Windows.Forms.Padding(4);
             this.txCourse.Name = "txCourse";
             this.txCourse.Size = new System.Drawing.Size(132, 22);
             this.txCourse.TabIndex = 8;
