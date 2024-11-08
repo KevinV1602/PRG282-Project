@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using PRG282_Project;
 
 namespace PRG282_Project.StudentLayer
 {
@@ -22,7 +23,7 @@ namespace PRG282_Project.StudentLayer
 
         public void DisplayStudents()
         {
-            string filePath = "students.txt"; // File path
+            string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
 
             try
             {
