@@ -112,12 +112,12 @@ namespace PRG282_Project
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
-            string studentId = txId.Text;
-            string name = txName.Text;
-            int age = int.Parse(txAge.Text);
-            string course = txCourse.Text;
+            string ID = txId.Text;
+            string Name = txName.Text;
+            int Age = int.Parse(txAge.Text);
+            string Course = txCourse.Text;
 
-            updateStudentInfo.UpdateStudent(studentId, name, age, course);
+            updateStudentInfo.UpdateStudent(ID, Name, Age, Course);
             LoadData();
 
         }
@@ -131,7 +131,7 @@ namespace PRG282_Project
                 var fields = line.Split(',');
                 students.Add(new Student
                 {
-                    StudentId = fields[0].Trim(),
+                    ID = fields[0].Trim(),
                     Name = fields[1].Trim(),
                     Age = int.Parse(fields[2].Trim()),
                     Course = fields[3].Trim()

@@ -12,15 +12,15 @@ namespace PRG282_Project.DataHandeling
     {
         private string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
 
-        public void UpdateStudent(string studentId, string name, int age, string course)
+        public void UpdateStudent(string ID, string Name, int Age, string Course)
         {
             var lines = File.ReadAllLines(filePath).ToList();
             for (int i = 0; i < lines.Count; i++)
             {
                 var fields = lines[i].Split(',');
-                if (fields[0].Trim() == studentId)
+                if (fields[0].Trim() == ID)
                 {
-                    lines[i] = $"{studentId}, {name}, {age}, {course}";
+                    lines[i] = $"{ID}, {Name}, {Age}, {Course}";
                     break;
                 }
             }
@@ -29,7 +29,7 @@ namespace PRG282_Project.DataHandeling
     }
     public class Student
     {
-        public string StudentId { get; set; }
+        public string ID { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
         public string Course { get; set; }
