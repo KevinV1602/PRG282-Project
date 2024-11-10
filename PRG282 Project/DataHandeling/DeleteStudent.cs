@@ -10,7 +10,7 @@ namespace PRG282_Project.DataHandeling
     {
         private DataGridView dataGridViewStudents;
         private ViewAllStudents viewAllStudents;
-        private readonly string path = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // Define the file path here
+        private readonly string path = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // Define the file path here
 
         // Constructor to initialize DataGridView and ViewAllStudents set
         public DeleteStudent(DataGridView dataGridView, ViewAllStudents viewAllStudentsInstance)

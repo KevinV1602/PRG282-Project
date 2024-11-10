@@ -22,10 +22,11 @@ namespace PRG282_Project.DataHandeling
         ViewAllStudents ViewAllStudents;  
         public void AddStudent(string name, string age, string course)
         {
-            
+
             try
             {
-                
+                if (int.TryParse(age, out int parsedAge) && parsedAge > 0 && parsedAge < 100)
+                {
                     if (File.Exists(path))
                     {
 
@@ -41,8 +42,17 @@ namespace PRG282_Project.DataHandeling
                     {
                         MessageBox.Show("students.txt file not found.");
                     }
-                
-               
+
+
+
+                }
+                else 
+                {
+                    MessageBox.Show("Please enter a vaild age");
+                }
+
+
+
 
 
             }
