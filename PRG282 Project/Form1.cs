@@ -54,7 +54,8 @@ namespace PRG282_Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            SummaryReport summaryReport = new SummaryReport();
+            summaryReport.Summary();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
