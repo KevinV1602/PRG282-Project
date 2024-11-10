@@ -181,7 +181,7 @@ namespace PRG282_Project
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(100, 20);
             this.txId.TabIndex = 12;
-            this.txId.TextChanged += new System.EventHandler(this.txId_TextChanged);
+            
             // 
             // label4
             // 
