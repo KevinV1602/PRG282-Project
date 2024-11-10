@@ -25,7 +25,9 @@ namespace PRG282_Project.StudentLayer
         public DataTable DisplayStudents()
         {
 
-            string filePath = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
+
+
+          string fullPath = @"StudentLayer\students.txt";
 
 
             try
@@ -41,9 +43,9 @@ namespace PRG282_Project.StudentLayer
                     dataGridViewStudents.Columns.Add("Course", typeof(string));
                 }
 
-                if (File.Exists(filePath))
+                if (File.Exists(fullPath))
                 {
-                    string[] studentRecords = File.ReadAllLines(filePath);
+                    string[] studentRecords = File.ReadAllLines(fullPath);
                     
                     MessageBox.Show($"Loaded {studentRecords.Length} records."); //  Check file amount and content (Refreshing list)
 

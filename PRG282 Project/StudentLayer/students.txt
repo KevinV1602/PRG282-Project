@@ -1,4 +1,11 @@
-S011,  John Johnson, 25,  Physics
+S004,  Katie Garcia, 19,  Geography
+S005, Chris Smith, 21, Physics
+S006, John Miller, 18, History
+S007, David Miller, 21, Biology
+S008, Emily Smith, 18, Mathematics
+S009, John Miller, 21, Chemistry
+S010, John Johnson, 21, Mathematics
+S011, John Johnson, 24, Physics
 S012, Emily Miller, 22, History
 S013, John Garcia, 22, Physics
 S014, Katie Brown, 24, Physics

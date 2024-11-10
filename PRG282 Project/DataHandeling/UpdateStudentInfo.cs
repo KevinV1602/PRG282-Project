@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace PRG282_Project.DataHandeling
 {
+
     public class UpdateStudentInfo
     {
-        private string filePath = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+
+        
 
         public void UpdateStudent(string ID, string Name, int Age, string Course)
         {
-            var lines = File.ReadAllLines(filePath).ToList();
+             string fullPath = @"StudentLayer\students.txt";
+
+        var lines = File.ReadAllLines(fullPath).ToList();
             for (int i = 0; i < lines.Count; i++)
             {
                 var fields = lines[i].Split(',');
@@ -24,7 +29,7 @@ namespace PRG282_Project.DataHandeling
                     break;
                 }
             }
-            File.WriteAllLines(filePath, lines);
+            File.WriteAllLines(fullPath, lines);
         }
     }
     public class Student

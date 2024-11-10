@@ -17,23 +17,26 @@ namespace PRG282_Project.DataHandeling
         {
             viewAllStudents = viewAllStudentsInstance;
         }
-        
-        string path = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+
+   
+
         ViewAllStudents ViewAllStudents;  
         public void AddStudent(string name, string age, string course)
         {
+            string fullPath = @"StudentLayer\students.txt";
+            
+            
 
             try
             {
-                if (int.TryParse(age, out int parsedAge) && parsedAge > 0 && parsedAge < 100)
-                {
+                
                     if (File.Exists(path))
                     {
 
                         List<string> lines = new List<string>();
-                        lines = File.ReadAllLines(path).ToList();
+                        lines = File.ReadAllLines(fullPath).ToList();
                         lines.Add($"{getNewID()}, {name}, {age}, {course}");
-                        File.WriteAllLines(path, lines);
+                        File.WriteAllLines(fullPath, lines);
 
                         MessageBox.Show("Student Added");
 
@@ -65,11 +68,13 @@ namespace PRG282_Project.DataHandeling
 
         public string getNewID()
         {
+            string fullPath = @"StudentLayer\students.txt";
+
             string newID = "";
             try
             {
                 List<string> lines = new List<string>();
-                lines = File.ReadAllLines(path).ToList();
+                lines = File.ReadAllLines(fullPath).ToList();
                 string lastline = lines[lines.Count - 1];
                 lastline = lastline.Substring(1, lastline.IndexOf(",") - 1);
                 int num = Convert.ToInt32(lastline);

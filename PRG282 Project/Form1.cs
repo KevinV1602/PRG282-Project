@@ -13,6 +13,7 @@ using PRG282_Project.DataHandeling;
 using PRG282_Project.StudentLayer;
 using System.Xml.Linq;
 using System.IO;
+using PRG282_Project.PresentationLayer;
 
 namespace PRG282_Project
 {
@@ -23,10 +24,13 @@ namespace PRG282_Project
         private ViewAllStudents viewAllStudents;
         public static DataGridView dataGridViewStudents;
         private UpdateStudentInfo updateStudentInfo = new UpdateStudentInfo();
-        private string filePath = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+     
 
         public MainForm()
         {
+            string folder = "StudentLayer";
+            string fileName = "students.txt";
+            string fullPath = Path.Combine(folder, fileName);
             InitializeComponent();
            
         }
@@ -53,7 +57,8 @@ namespace PRG282_Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            SummaryReport summaryReport = new SummaryReport();
+            summaryReport.Summary();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -121,11 +126,34 @@ namespace PRG282_Project
             viewAllStudents.DisplayStudents();
 
         }
-
-
-        private void txId_TextChanged(object sender, EventArgs e)
+        private void LoadData()
         {
+            var lines = File.ReadAllLines(filePath);
+            var students = new List<Student>();
 
+            foreach (var line in lines)
+            {
+                var fields = line.Split(',');
+                students.Add(new Student
+                {
+                    ID = fields[0].Trim(),
+                    Name = fields[1].Trim(),
+                    Age = int.Parse(fields[2].Trim()),
+                    Course = fields[3].Trim()
+                });
+            }
+
+            dataGridViewStudents.DataSource = students;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string ID = (txId.Text);
+            SearchStudent searchStudent = new SearchStudent();
+            int indexNumber = searchStudent.searchStudent(ID);
+            DBTable.Focus();
+            DBTable.CurrentCell = DBTable.Rows[indexNumber].Cells[0];
+            
         }
     }
 }
