@@ -10,7 +10,7 @@ namespace PRG282_Project.DataHandeling
 {
     public class UpdateStudentInfo
     {
-        private string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+        private string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; 
 
         public void UpdateStudent(string ID, string Name, int Age, string Course)
         {

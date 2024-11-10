@@ -13,6 +13,7 @@ using PRG282_Project.DataHandeling;
 using PRG282_Project.StudentLayer;
 using System.Xml.Linq;
 using System.IO;
+using PRG282_Project.PresentationLayer;
 
 namespace PRG282_Project
 {
@@ -23,7 +24,7 @@ namespace PRG282_Project
         private ViewAllStudents viewAllStudents;
         public static DataGridView dataGridViewStudents;
         private UpdateStudentInfo updateStudentInfo = new UpdateStudentInfo();
-        private string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+        private string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
 
         public MainForm()
         {
@@ -125,6 +126,16 @@ namespace PRG282_Project
         private void txId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string ID = (txId.Text);
+            SearchStudent searchStudent = new SearchStudent();
+            int indexNumber = searchStudent.searchStudent(ID);
+            DBTable.Focus();
+            DBTable.CurrentCell = DBTable.Rows[indexNumber].Cells[0];
+            
         }
     }
 }
