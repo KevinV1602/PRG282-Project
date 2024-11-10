@@ -12,7 +12,7 @@ namespace PRG282_Project.DataHandeling
         private ViewAllStudents viewAllStudents;
         private readonly string path = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // Define the file path here
 
-        // Constructor to initialize DataGridView and ViewAllStudents
+        // Constructor to initialize DataGridView and ViewAllStudents set
         public DeleteStudent(DataGridView dataGridView, ViewAllStudents viewAllStudentsInstance)
         {
             dataGridViewStudents = dataGridView;
@@ -23,10 +23,10 @@ namespace PRG282_Project.DataHandeling
         {
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {
-                var selectedRow = dataGridViewStudents.SelectedRows[0];
-                string studentId = selectedRow.Cells["ID"].Value?.ToString();
+                var selectedRow = dataGridViewStudents.SelectedRows[0];// Must select row first and then Delete Button
+                string studentId = selectedRow.Cells["ID"].Value?.ToString(); //Use ID
 
-                var confirmResult = MessageBox.Show(
+                var confirmResult = MessageBox.Show(  // Conformation from User 
                     "Are you sure you want to delete this student?",
                     "Confirm Delete",
                     MessageBoxButtons.YesNo);
@@ -39,12 +39,12 @@ namespace PRG282_Project.DataHandeling
                         return;
                     }
 
-                    string[] studentRecords = File.ReadAllLines(path);
+                    string[] studentRecords = File.ReadAllLines(path); //Remove student
                     var updatedRecords = studentRecords
                         .Where(record => !record.StartsWith(studentId + ","))
                         .ToArray();
 
-                    File.WriteAllLines(path, updatedRecords);
+                    File.WriteAllLines(path, updatedRecords);  // Update Count on Student.txt file. Refreshed
 
                     // Refresh DataGridView
                     viewAllStudents.DisplayStudents();
@@ -52,7 +52,7 @@ namespace PRG282_Project.DataHandeling
             }
             else
             {
-                MessageBox.Show("Please select a student to delete.");
+                MessageBox.Show("Please select a student to delete.");  // Must Select to Delete
             }
         }
     }

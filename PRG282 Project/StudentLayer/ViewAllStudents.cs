@@ -25,7 +25,7 @@ namespace PRG282_Project.StudentLayer
         public DataTable DisplayStudents()
         {
 
-            string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
+            string filePath = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
 
 
             try
@@ -45,7 +45,7 @@ namespace PRG282_Project.StudentLayer
                 {
                     string[] studentRecords = File.ReadAllLines(filePath);
                     
-                    MessageBox.Show($"Loaded {studentRecords.Length} records."); // Debugging: Check file content
+                    MessageBox.Show($"Loaded {studentRecords.Length} records."); //  Check file amount and content (Refreshing list)
 
                     foreach (string record in studentRecords)
                     {
@@ -64,7 +64,7 @@ namespace PRG282_Project.StudentLayer
                         }
                         else
                         {
-                            MessageBox.Show("Data format error: each record should have exactly four fields.");
+                            MessageBox.Show("Data format error: each record should have exactly four fields."); // User Validation
                             break;
                         }
                     }
@@ -76,7 +76,7 @@ namespace PRG282_Project.StudentLayer
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading students: {ex.Message}");
+                MessageBox.Show($"An error occurred while loading students: {ex.Message}");   // Error Control
             }
             return dataGridViewStudents;
         }
