@@ -55,6 +55,7 @@ namespace PRG282_Project
             this.label3 = new System.Windows.Forms.Label();
             this.txId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DBTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@ namespace PRG282_Project
             // 
             // btnViewStudent
             // 
-            this.btnViewStudent.Location = new System.Drawing.Point(450, 42);
+            this.btnViewStudent.Location = new System.Drawing.Point(450, 11);
             this.btnViewStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewStudent.Name = "btnViewStudent";
             this.btnViewStudent.Size = new System.Drawing.Size(107, 28);
@@ -104,7 +105,7 @@ namespace PRG282_Project
             // 
             // btnSummary
             // 
-            this.btnSummary.Location = new System.Drawing.Point(450, 75);
+            this.btnSummary.Location = new System.Drawing.Point(453, 53);
             this.btnSummary.Margin = new System.Windows.Forms.Padding(2);
             this.btnSummary.Name = "btnSummary";
             this.btnSummary.Size = new System.Drawing.Size(104, 29);
@@ -128,21 +129,21 @@ namespace PRG282_Project
             // 
             // txName
             // 
-            this.txName.Location = new System.Drawing.Point(450, 167);
+            this.txName.Location = new System.Drawing.Point(450, 181);
             this.txName.Name = "txName";
             this.txName.Size = new System.Drawing.Size(100, 20);
             this.txName.TabIndex = 6;
             // 
             // txAge
             // 
-            this.txAge.Location = new System.Drawing.Point(450, 206);
+            this.txAge.Location = new System.Drawing.Point(450, 220);
             this.txAge.Name = "txAge";
             this.txAge.Size = new System.Drawing.Size(100, 20);
             this.txAge.TabIndex = 7;
             // 
             // txCourse
             // 
-            this.txCourse.Location = new System.Drawing.Point(450, 245);
+            this.txCourse.Location = new System.Drawing.Point(450, 259);
             this.txCourse.Name = "txCourse";
             this.txCourse.Size = new System.Drawing.Size(100, 20);
             this.txCourse.TabIndex = 8;
@@ -150,7 +151,7 @@ namespace PRG282_Project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(467, 151);
+            this.label1.Location = new System.Drawing.Point(467, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 9;
@@ -159,7 +160,7 @@ namespace PRG282_Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(467, 190);
+            this.label2.Location = new System.Drawing.Point(467, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 10;
@@ -168,7 +169,7 @@ namespace PRG282_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(467, 229);
+            this.label3.Location = new System.Drawing.Point(467, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 11;
@@ -176,7 +177,7 @@ namespace PRG282_Project
             // 
             // txId
             // 
-            this.txId.Location = new System.Drawing.Point(450, 128);
+            this.txId.Location = new System.Drawing.Point(450, 100);
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(100, 20);
             this.txId.TabIndex = 12;
@@ -185,17 +186,28 @@ namespace PRG282_Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(467, 112);
+            this.label4.Location = new System.Drawing.Point(467, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "ID";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(450, 126);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(107, 28);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "Search Student";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 350);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txId);
             this.Controls.Add(this.label3);
@@ -243,6 +255,7 @@ namespace PRG282_Project
         private System.Windows.Forms.Label label3;
         private TextBox txId;
         private Label label4;
+        private Button btnSearch;
     }
 }
 

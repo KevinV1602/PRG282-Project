@@ -49,6 +49,7 @@
     <Compile Include="DataHandeling\AddNewStudent.cs" />
     <Compile Include="DataHandeling\DeleteStudent.cs" />
     <Compile Include="DataHandeling\UpdateStudentInfo.cs" />
+    <Compile Include="PresentationLayer\SearchStudent.cs" />
     <Compile Include="StudentLayer\SummaryReport.cs" />
     <Compile Include="StudentLayer\ViewAllStudents.cs" />
     <Compile Include="Form1.cs">
@@ -84,9 +85,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PresentationLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="StudentLayer\students.txt" />
   </ItemGroup>
