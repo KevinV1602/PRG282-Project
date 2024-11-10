@@ -29,8 +29,9 @@ namespace PRG282_Project.DataHandeling
 
             try
             {
-                
-                    if (File.Exists(path))
+                if (int.TryParse(age, out int parsedAge) && parsedAge > 5 && parsedAge < 100)
+                { 
+                    if (File.Exists(fullPath))
                     {
 
                         List<string> lines = new List<string>();
@@ -39,6 +40,7 @@ namespace PRG282_Project.DataHandeling
                         File.WriteAllLines(fullPath, lines);
 
                         MessageBox.Show("Student Added");
+                        viewAllStudents.DisplayStudents();
 
                     }
                     else
@@ -48,7 +50,7 @@ namespace PRG282_Project.DataHandeling
 
 
 
-                }
+            }
                 else 
                 {
                     MessageBox.Show("Please enter a vaild age");
