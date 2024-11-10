@@ -29,7 +29,8 @@ namespace PRG282_Project.DataHandeling
 
             try
             {
-                
+                if (int.TryParse(age, out int parsedAge) && parsedAge > 5 && parsedAge < 100)
+                { 
                     if (File.Exists(fullPath))
                     {
 
@@ -39,14 +40,24 @@ namespace PRG282_Project.DataHandeling
                         File.WriteAllLines(fullPath, lines);
 
                         MessageBox.Show("Student Added");
+                        viewAllStudents.DisplayStudents();
 
                     }
                     else
                     {
                         MessageBox.Show("students.txt file not found.");
                     }
-                
-               
+
+
+
+            }
+                else 
+                {
+                    MessageBox.Show("Please enter a vaild age");
+                }
+
+
+
 
 
             }

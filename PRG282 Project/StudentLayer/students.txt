@@ -1,5 +1,4 @@
 S004,  Katie Garcia, 19,  Geography
-S005, Chris Smith, 21, Physics
 S006, John Miller, 18, History
 S007, David Miller, 21, Biology
 S008, Emily Smith, 18, Mathematics
@@ -95,4 +94,6 @@ S097, Sarah Hernandez, 24, Geography
 S098, Alex Davis, 25, Chemistry
 S099, Jane Miller, 22, English Literature
 S100, Laura Martinez, 23, English Literature
-S101,  Alice Johnson, 21,  Science 
+S101, Alice Johnson, 20, Science 
+S102,  Emily Miller,  66,  History
+S103,   Chris Smith,  22,   Physics
