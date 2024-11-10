@@ -126,25 +126,7 @@ namespace PRG282_Project
             viewAllStudents.DisplayStudents();
 
         }
-        private void LoadData()
-        {
-            var lines = File.ReadAllLines(filePath);
-            var students = new List<Student>();
 
-            foreach (var line in lines)
-            {
-                var fields = line.Split(',');
-                students.Add(new Student
-                {
-                    ID = fields[0].Trim(),
-                    Name = fields[1].Trim(),
-                    Age = int.Parse(fields[2].Trim()),
-                    Course = fields[3].Trim()
-                });
-            }
-
-            dataGridViewStudents.DataSource = students;
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -154,6 +136,21 @@ namespace PRG282_Project
             DBTable.Focus();
             DBTable.CurrentCell = DBTable.Rows[indexNumber].Cells[0];
             
+        }
+
+        private void txName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txAge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
