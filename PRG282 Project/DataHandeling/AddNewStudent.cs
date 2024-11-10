@@ -17,22 +17,26 @@ namespace PRG282_Project.DataHandeling
         {
             viewAllStudents = viewAllStudentsInstance;
         }
-        
-        string path = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+
+   
+
         ViewAllStudents ViewAllStudents;  
         public void AddStudent(string name, string age, string course)
         {
-            
+            string folder = "StudentLayer";
+            string fileName = "students.txt";
+            string fullPath = Path.Combine(folder, fileName);
+
             try
             {
                 
-                    if (File.Exists(path))
+                    if (File.Exists(fullPath))
                     {
 
                         List<string> lines = new List<string>();
-                        lines = File.ReadAllLines(path).ToList();
+                        lines = File.ReadAllLines(fullPath).ToList();
                         lines.Add($"{getNewID()}, {name}, {age}, {course}");
-                        File.WriteAllLines(path, lines);
+                        File.WriteAllLines(fullPath, lines);
 
                         MessageBox.Show("Student Added");
 

@@ -24,10 +24,13 @@ namespace PRG282_Project
         private ViewAllStudents viewAllStudents;
         public static DataGridView dataGridViewStudents;
         private UpdateStudentInfo updateStudentInfo = new UpdateStudentInfo();
-        private string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+     
 
         public MainForm()
         {
+            string folder = "StudentLayer";
+            string fileName = "students.txt";
+            string fullPath = Path.Combine(folder, fileName);
             InitializeComponent();
            
         }

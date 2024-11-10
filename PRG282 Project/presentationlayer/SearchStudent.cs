@@ -10,14 +10,17 @@ namespace PRG282_Project.PresentationLayer
 {
     internal class SearchStudent
     {
-        string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+
+        public static string folder = "StudentLayer";
+        public static string fileName = "students.txt";
+        public string fullPath = Path.Combine(folder, fileName);
         public int searchStudent(string ID) 
         {
             int count = 0;
             try 
             {
                 List<string> lines = new List<string>();
-                lines = File.ReadAllLines(filePath).ToList();
+                lines = File.ReadAllLines(fullPath).ToList();
 
 
                 ID = ID.Substring(1, ID.Length - 1);

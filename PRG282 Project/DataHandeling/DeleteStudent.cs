@@ -10,7 +10,7 @@ namespace PRG282_Project.DataHandeling
     {
         private DataGridView dataGridViewStudents;
         private ViewAllStudents viewAllStudents;
-        private readonly string path = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // Define the file path here
+        // Define the file path here
 
         // Constructor to initialize DataGridView and ViewAllStudents set
         public DeleteStudent(DataGridView dataGridView, ViewAllStudents viewAllStudentsInstance)
@@ -21,6 +21,10 @@ namespace PRG282_Project.DataHandeling
 
         public void DeleteSelectedStudent()
         {
+            string folder = "StudentLayer";
+            string fileName = "students.txt";
+            string fullPath = Path.Combine(folder, fileName);
+
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridViewStudents.SelectedRows[0];// Must select row first and then Delete Button
@@ -33,18 +37,18 @@ namespace PRG282_Project.DataHandeling
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    if (!File.Exists(path))
+                    if (!File.Exists(fullPath))
                     {
                         MessageBox.Show("The students.txt file was not found.");
                         return;
                     }
 
-                    string[] studentRecords = File.ReadAllLines(path); //Remove student
+                    string[] studentRecords = File.ReadAllLines(fullPath); //Remove student
                     var updatedRecords = studentRecords
                         .Where(record => !record.StartsWith(studentId + ","))
                         .ToArray();
 
-                    File.WriteAllLines(path, updatedRecords);  // Update Count on Student.txt file. Refreshed
+                    File.WriteAllLines(fullPath, updatedRecords);  // Update Count on Student.txt file. Refreshed
 
                     // Refresh DataGridView
                     viewAllStudents.DisplayStudents();
