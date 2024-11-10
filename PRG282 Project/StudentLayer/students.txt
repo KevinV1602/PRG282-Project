@@ -1,5 +1,7 @@
-S004, Katie Garcia, 18, Geography
-S005, Chris Smill, 21, Physics
+S002, David Syvgyg, 99, Mathematics
+S003,  Michael Brown, 22,  English Literature
+S004,  Katie Garcia, 19,  Geography
+S005, Chris Smith, 21, Physics
 S006, John Miller, 18, History
 S007, David Miller, 21, Biology
 S008, Emily Smith, 18, Mathematics
