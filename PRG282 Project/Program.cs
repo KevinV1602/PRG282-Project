@@ -17,9 +17,7 @@ namespace PRG282_Project
         [STAThread]
         static void Main()
         {
-            string folder = "StudentLayer";
-            string fileName = "students.txt";
-            string fullPath = Path.Combine(folder, fileName);
+      
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -10,8 +10,7 @@ namespace PRG282_Project.DataHandeling
     {
         private DataGridView dataGridViewStudents;
         private ViewAllStudents viewAllStudents;
-        // Define the file path here
-
+        public static string fullPath = @"StudentLayer\students.txt";
         // Constructor to initialize DataGridView and ViewAllStudents set
         public DeleteStudent(DataGridView dataGridView, ViewAllStudents viewAllStudentsInstance)
         {
@@ -21,9 +20,7 @@ namespace PRG282_Project.DataHandeling
 
         public void DeleteSelectedStudent()
         {
-            string folder = "StudentLayer";
-            string fileName = "students.txt";
-            string fullPath = Path.Combine(folder, fileName);
+           
 
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {

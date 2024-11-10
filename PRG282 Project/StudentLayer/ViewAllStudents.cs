@@ -25,10 +25,9 @@ namespace PRG282_Project.StudentLayer
         public DataTable DisplayStudents()
         {
 
-          
-            string folder = "StudentLayer";
-            string fileName = "students.txt";
-            string fullPath = Path.Combine(folder, fileName);
+
+
+          string fullPath = @"StudentLayer\students.txt";
 
 
             try

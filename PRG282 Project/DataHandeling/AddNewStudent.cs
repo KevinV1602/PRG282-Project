@@ -23,9 +23,9 @@ namespace PRG282_Project.DataHandeling
         ViewAllStudents ViewAllStudents;  
         public void AddStudent(string name, string age, string course)
         {
-            string folder = "StudentLayer";
-            string fileName = "students.txt";
-            string fullPath = Path.Combine(folder, fileName);
+            string fullPath = @"StudentLayer\students.txt";
+            
+            
 
             try
             {
@@ -59,11 +59,13 @@ namespace PRG282_Project.DataHandeling
 
         public string getNewID()
         {
+            string fullPath = @"StudentLayer\students.txt";
+
             string newID = "";
             try
             {
                 List<string> lines = new List<string>();
-                lines = File.ReadAllLines(path).ToList();
+                lines = File.ReadAllLines(fullPath).ToList();
                 string lastline = lines[lines.Count - 1];
                 lastline = lastline.Substring(1, lastline.IndexOf(",") - 1);
                 int num = Convert.ToInt32(lastline);

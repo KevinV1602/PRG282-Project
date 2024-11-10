@@ -13,14 +13,13 @@ namespace PRG282_Project.DataHandeling
     public class UpdateStudentInfo
     {
 
-        static string relativePath = @"..\..\StudentLayer\students.txt";
-        string fullPath = Path.GetFullPath(relativePath);
+        
 
         public void UpdateStudent(string ID, string Name, int Age, string Course)
         {
-            
+             string fullPath = @"StudentLayer\students.txt";
 
-            var lines = File.ReadAllLines(fullPath).ToList();
+        var lines = File.ReadAllLines(fullPath).ToList();
             for (int i = 0; i < lines.Count; i++)
             {
                 var fields = lines[i].Split(',');

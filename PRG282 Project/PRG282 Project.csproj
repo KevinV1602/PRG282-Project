@@ -87,8 +87,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="StudentLayer\students.txt" />
-    <Content Include="StudentLayer\Summary.txt" />
+    <Content Include="StudentLayer\students.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StudentLayer\Summary.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

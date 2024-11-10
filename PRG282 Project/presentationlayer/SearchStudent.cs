@@ -11,9 +11,7 @@ namespace PRG282_Project.PresentationLayer
     internal class SearchStudent
     {
 
-        public static string folder = "StudentLayer";
-        public static string fileName = "students.txt";
-        public string fullPath = Path.Combine(folder, fileName);
+        public static string fullPath = @"StudentLayer\students.txt";
         public int searchStudent(string ID) 
         {
             int count = 0;

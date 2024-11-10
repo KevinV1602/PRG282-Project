@@ -10,8 +10,8 @@ namespace PRG282_Project.StudentLayer
 {
     internal class SummaryReport
     {
-        string filePath = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\Summary.txt";
-        string filePathStudent = @"C:\Users\dariu\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
+        public static string filePath = @"StudentLayer\Summary.txt";
+        public static string fullPath = @"StudentLayer\students.txt";
         public void Summary() 
         {
             List<string> linesStudent = new List<string>();
@@ -22,7 +22,7 @@ namespace PRG282_Project.StudentLayer
                 lines = File.ReadAllLines(filePath).ToList();
 
                 
-                linesStudent = File.ReadAllLines(filePathStudent).ToList();
+                linesStudent = File.ReadAllLines(fullPath).ToList();
             }
             
             int count = linesStudent.Count;
