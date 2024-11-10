@@ -37,11 +37,11 @@ namespace PRG282_Project
 
 
            myDataTable.Columns.Add("ID", typeof(string));
-            myDataTable.Columns.Add("Name", typeof(string));
-            myDataTable.Columns.Add("Age", typeof(string));
+           myDataTable.Columns.Add("Name", typeof(string));
+           myDataTable.Columns.Add("Age", typeof(string));
            myDataTable.Columns.Add("Course", typeof(string));
 
-              myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
+           myDataTable.Rows.Add("S001", "Jane Smith", "25", "English Literature");
 
             DBTable.DataSource = myDataTable;
             dataGridViewStudents = DBTable;
@@ -87,7 +87,7 @@ namespace PRG282_Project
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             AddNewStudent addNewStudent = new AddNewStudent(viewAllStudents);
-            if (txName == null || txAge.Text == null || txCourse.Text == null)
+            if (!string.IsNullOrEmpty(txName.Text)  || !string.IsNullOrEmpty(txAge.Text) || !string.IsNullOrEmpty(txCourse.Text))
             {
                 DialogResult Result = MessageBox.Show($"Are you sure you want to add this Student " +
                 $"\rStudentID: {addNewStudent.getNewID()}\r Name: {txName.Text}\r " +
