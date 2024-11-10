@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PRG282_Project.DataHandeling;
 using PRG282_Project.StudentLayer;
 using System.Xml.Linq;
+using System.IO;
 
 namespace PRG282_Project
 {
@@ -21,6 +22,8 @@ namespace PRG282_Project
      /// </summary>
         private ViewAllStudents viewAllStudents;
         public static DataGridView dataGridViewStudents;
+        private UpdateStudentInfo updateStudentInfo = new UpdateStudentInfo();
+        private string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt";
 
         public MainForm()
         {
@@ -59,7 +62,7 @@ namespace PRG282_Project
             indexrow = e.RowIndex;
 
             DataGridViewRow row = DBTable.Rows[indexrow];
-
+            txId.Text = row.Cells[0].Value.ToString();
             txName.Text = row.Cells[1].Value.ToString();
             txAge.Text = row.Cells[2].Value.ToString();
             txCourse.Text = row.Cells[3].Value.ToString();
@@ -109,18 +112,38 @@ namespace PRG282_Project
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
-            // collect updated student data from the user
-            Student updatedStudent = UpdateStudentInfo.GetUpdatedStudentFromUser();
+            string studentId = txId.Text;
+            string name = txName.Text;
+            int age = int.Parse(txAge.Text);
+            string course = txCourse.Text;
 
-            //Update the DataGridView with the updated student data
+            updateStudentInfo.UpdateStudent(studentId, name, age, course);
+            LoadData();
 
-            UpdateStudentInfo.UpdateStudentInGrid(dataGridViewStudents, updatedStudent);
+        }
+        private void LoadData()
+        {
+            var lines = File.ReadAllLines(filePath);
+            var students = new List<Student>();
 
-            // Refresh the DataGridView
+            foreach (var line in lines)
+            {
+                var fields = line.Split(',');
+                students.Add(new Student
+                {
+                    StudentId = fields[0].Trim(),
+                    Name = fields[1].Trim(),
+                    Age = int.Parse(fields[2].Trim()),
+                    Course = fields[3].Trim()
+                });
+            }
 
-            dataGridViewStudents.Refresh();
+            dataGridViewStudents.DataSource = students;
         }
 
-       
+        private void txId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
