@@ -25,7 +25,7 @@ namespace PRG282_Project.StudentLayer
         public DataTable DisplayStudents()
         {
 
-            string filePath = @"C:\Users\zoe27\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
+            string filePath = @"C:\Users\squis\source\repos\PRG282-Project\PRG282 Project\StudentLayer\students.txt"; // File path
 
 
             try

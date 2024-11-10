@@ -118,29 +118,10 @@ namespace PRG282_Project
             string Course = txCourse.Text;
 
             updateStudentInfo.UpdateStudent(ID, Name, Age, Course);
-            LoadData();
+            viewAllStudents.DisplayStudents();
 
         }
-        private void LoadData()
-        {
-            var lines = File.ReadAllLines(filePath);
-            var students = new List<Student>();
-
-            foreach (var line in lines)
-            {
-                var fields = line.Split(',');
-                students.Add(new Student
-                {
-                    ID = fields[0].Trim(),
-                    Name = fields[1].Trim(),
-                    Age = int.Parse(fields[2].Trim()),
-                    Course = fields[3].Trim()
-                });
-            }
-
-            dataGridViewStudents.DataSource = students;
-        }
-
+    
         private void txId_TextChanged(object sender, EventArgs e)
         {
 
